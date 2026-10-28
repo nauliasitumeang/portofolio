@@ -1,0 +1,468 @@
+@font-face {
+  font-family: "Anca Coder";
+  src: url("fonts/AncaCoder.woff2") format("woff2"),
+       url("fonts/AncaCoder.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Variabel warna dan font */
+:root {
+  --bg: #fffaf4;
+  --text: #4b1b0c;
+  --soft: rgba(75, 27, 12, 0.65);
+  --line: rgba(75, 27, 12, 0.15);
+  --card: #fff3e6;
+  --accent: #a8572e;
+  --font-main: "Poppins", sans-serif;
+  --font-code: "Anca Coder", "Courier New", monospace;
+}
+
+/* Reset dan pengaturan dasar */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ---------- NAVBAR ---------- */
+
+/* Bar navigasi menempel di atas */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  background: rgba(255, 250, 244, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+}
+
+.logo { font-family: var(--font-main); font-size: 1.2rem; font-weight: 700; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Garis bawah animasi saat hover / menu aktif */
+.nav-links a:not(.btn-nav) { position: relative; }
+.nav-links a:not(.btn-nav)::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--text);
+  transition: width 0.3s ease;
+}
+.nav-links a:not(.btn-nav):hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* Tombol "Contact me" */
+.btn-nav {
+  background: var(--text);
+  color: var(--bg);
+  padding: 10px 24px;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.btn-nav:hover { transform: translateY(-2px); opacity: 0.9; }
+
+/* Tombol menu hamburger (hanya tampil di HP) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* ---------- HERO ---------- */
+
+/* Section utama setinggi layar */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 110px 8% 60px;
+}
+
+/* Dua kolom: teks di kiri, foto di kanan */
+.hero-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-text { text-align: left; }
+
+/* Sapaan di atas judul */
+.hero-small {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Teks yang diketik otomatis */
+.typing-wrap {
+  display: block;
+  font-family: var(--font-code);
+  font-size: 0.85em;
+  color: var(--accent);
+  min-height: 1.3em;
+}
+
+/* Kursor berkedip di akhir teks ketikan */
+.cursor {
+  display: inline-block;
+  width: 3px; height: 0.9em;
+  background: var(--text);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+.hero-desc { margin-top: 18px; max-width: 520px; color: var(--soft); }
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* Tombol utama (terisi) dan versi outline */
+.btn {
+  display: inline-block;
+  background: var(--text);
+  color: var(--bg);
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 500;
+  border: 2px solid var(--text);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn-outline { background: transparent; color: var(--text); }
+.btn-outline:hover { background: var(--text); color: var(--bg); }
+
+/* ---------- FOTO ---------- */
+.photo-card {
+  justify-self: end;
+  align-self: start;
+  width: min(100%, 460px);
+  
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+}
+
+/* ---------- SECTIONS ---------- */
+
+/* Pembungkus umum tiap section */
+.section { padding: 100px 8% 40px; text-align: center; }
+.page-top { padding-top: 40px; min-height: 80vh; }
+
+.section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; }
+.group-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; }
+.section-sub { color: var(--soft); margin-top: 8px; }
+.work-section { padding-top: 60px; }
+
+/* ---------- ABOUT ---------- */
+
+/* Paragraf perkenalan */
+.about-text {
+  max-width: 760px;
+  margin: 28px auto 0;
+  text-align: left;
+  color: var(--soft);
+}
+.about-text p + p { margin-top: 14px; }
+
+.skills-title {
+  margin-top: 56px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- SKILLS MARQUEE ---------- */
+
+/* Wadah icon berjalan, tepi kiri dan kanan memudar */
+.marquee {
+  margin-top: 8px;
+  padding-top: 20px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Jalur icon bergerak otomatis, berhenti saat di-hover */
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+.marquee:hover .track { animation-play-state: paused; }
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Kotak satu icon skill (tanpa kotak/border, icon langsung tampil) */
+.skill {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100px; height: 100px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.skill:hover { transform: translateY(-4px); }
+.skill img { width: 80px; height: 80px; }
+
+/* Teks pengganti untuk skill yang tidak punya icon */
+.skill span {
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* Tooltip nama skill saat di-hover, muncul di bagian bawah icon*/
+.skill::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.skill:hover::after { opacity: 1; }
+
+/* ---------- CARDS ---------- */
+
+/* Deretan kartu project */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* Kartu project, versi .wide lebih lebar, .soon berbingkai putus-putus */
+.card {
+  width: 320px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 32px 26px;
+  text-align: left;
+  display: block;
+}
+.card.wide { width: 460px; max-width: 100%; }
+.card:not(.soon):not(.static):hover { box-shadow: 0 16px 36px rgba(75, 27, 12, 0.14); }
+.card.soon { border-style: dashed; }
+
+.card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.card p { color: var(--soft); font-size: 0.92rem; }
+.card-link { display: inline-block; margin-top: 16px; font-family: var(--font-code); font-weight: 700; }
+
+/* Label kecil di dalam kartu */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text)
+}
+
+.center-btn { margin-top: 40px; }
+
+/* ---------- CERTIFICATE CAROUSEL ---------- */
+
+/* Wadah carousel: panah kiri, daftar sertifikat, panah kanan */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Daftar sertifikat yang bisa digeser dan berhenti pas di tiap kartu */
+.cert-track {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 6px 2px 14px;
+}
+.cert-track::-webkit-scrollbar { display: none; }
+
+/* Satu kartu sertifikat, 2 per layar di desktop */
+.cert-card {
+  flex: 0 0 calc((100% - 24px) / 2);
+  scroll-snap-align: start;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+  text-align: left;
+}
+
+/* Area gambar/emoji sertifikat */
+.cert-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f1d9c0, #e3b88f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+.cert-card h4 { font-size: 1rem; line-height: 1.4; }
+.cert-card p { color: var(--soft); font-size: 0.85rem; margin-top: 4px; }
+
+/* Tombol panah carousel */
+.arrow {
+  flex: 0 0 auto;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.arrow:hover { background: var(--text); color: var(--bg); }
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  padding: 26px 8%;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--soft);
+}
+
+/* ---------- ANIMASI SCROLL ---------- */
+
+/* Elemen muncul perlahan dari bawah saat masuk layar */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+.fade.visible { opacity: 1; transform: translateY(0); }
+
+/* Jeda bertahap supaya elemen hero muncul berurutan */
+.hero-title.fade { transition-delay: 0.1s; }
+.hero-desc.fade { transition-delay: 0.2s; }
+.hero-buttons.fade { transition-delay: 0.3s; }
+
+/* ---------- RESPONSIVE (HP) ---------- */
+
+@media (max-width: 800px) {
+  .navbar { padding: 14px 5%; }
+  .menu-toggle { display: block; }
+
+  /* Menu turun sebagai dropdown saat hamburger diklik */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+
+  /* Hero jadi satu kolom: foto di atas, teks di bawah */
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-text { text-align: center; }
+  .hero-desc { margin: 18px auto 0; }
+  .hero-buttons { justify-content: center; }
+
+  /* Foto di tengah dan lebih kecil; fade ke bawah tetap berlaku */
+  .photo-card { order: -1; justify-self: center; width: 280px; }
+
+  .section { padding: 80px 6% 30px; }
+  .card, .card.wide { width: 100%; }
+  .cert-card { flex: 0 0 100%; }
+  .arrow { width: 34px; height: 34px; font-size: 1.2rem; }
+  .carousel { gap: 6px; }
+}
+
+/* Matikan animasi untuk pengguna yang memilih mengurangi gerakan
+@media (prefers-reduced-motion: reduce) {
+  .fade { transition: none; opacity: 1; transform: none; }
+  .track { animation: none; }
+  html { scroll-behavior: auto; }
+} */

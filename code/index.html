@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naulia Situmeang | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html#home" class="logo">Nauonaoo</a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html#home" class="active">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#certificates">Certificates</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nauliasitumeang2501@gmail.com" target="_blank" rel="noopener" class="btn-nav">Contact me</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <p class="fade hero-small">Hi there! I'm Naulia ☕</p>
+        <h1 class="fade hero-title">
+          Information Technology Student &amp;
+          <span class="typing-wrap"><span id="typing"></span><span class="cursor"></span></span>
+        </h1>
+        <p class="fade hero-desc">Universitas Sumatera Utara · I break things (legally) to learn how to protect them.</p>
+        <div class="fade hero-buttons">
+          <a href="#work" class="btn">See my work</a>
+          <a href="https://github.com/nauliasitumeang" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+
+      <div class="fade photo-card">
+        <img src="../img/profile_nau.png" alt="Foto Naulia" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT + SKILLS -->
+  <section id="about" class="section">
+    <h2 class="fade section-title">About Me</h2>
+    <div class="fade about-text">
+      <p>
+        I'm an Information Technology undergraduate at Universitas Sumatera Utara,
+        currently in my fifth semester. I'm an enthusiast who is curious about the
+        world of cybersecurity: the field that is all about understanding how systems
+        can be attacked so they can be protected better.
+      </p>
+      <p>
+        Through the Cybersecurity Pathway at GDGoC USU, I solved CTF challenges in
+        web exploitation, cryptography, reverse engineering, and digital forensics.
+        Outside of tech, I've grown my teamwork and communication through several
+        organizations and committees, and I run on coffee.
+      </p>
+    </div>
+
+    <h3 class="fade skills-title">Skills &amp; Tools</h3>
+    <div class="fade marquee">
+      <div class="track" id="skillsTrack">
+        <div class="skill" data-name="HTML"><img src="https://skillicons.dev/icons?i=html" alt="HTML" /></div>
+        <div class="skill" data-name="CSS"><img src="https://skillicons.dev/icons?i=css" alt="CSS" /></div>
+        <div class="skill" data-name="GitHub"><img src="https://skillicons.dev/icons?i=github" alt="GitHub" /></div>
+        <div class="skill" data-name="Laravel"><img src="https://skillicons.dev/icons?i=laravel" alt="Laravel" /></div>
+        <div class="skill" data-name="Kali Linux"><img src="https://cdn.simpleicons.org/kalilinux/000000" alt="Kali Linux" /></div>
+        <div class="skill" data-name="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" /></div>
+        <div class="skill" data-name="Linux"><img src="https://skillicons.dev/icons?i=linux" alt="Linux" /></div>
+        <div class="skill" data-name="Wireshark"><img src="https://cdn.simpleicons.org/wireshark/000000" alt="Wireshark" /></div>
+        <div class="skill" data-name="Ubuntu"><img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu" /></div>
+        <div class="skill" data-name="VS Code"><img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" /></div>
+        <div class="skill" data-name="VirtualBox"><img src="https://cdn.simpleicons.org/virtualbox/000000" alt="VirtualBox" /></div>
+        <div class="skill" data-name="Figma"><img src="https://skillicons.dev/icons?i=figma" alt="Figma" /></div>
+        <div class="skill" data-name="Burp Suite"><img src="https://cdn.simpleicons.org/burpsuite/000000" alt="Burp Suite" /></div>
+        <div class="skill" data-name="PHP"><img src="https://skillicons.dev/icons?i=php" alt="PHP" /></div>
+        <div class="skill" data-name="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" /></div>
+        <div class="skill" data-name="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK (preview) -->
+  <section id="work" class="section">
+    <h2 class="fade section-title">My Work</h2>
+    <p class="fade section-sub">A few things I've written while learning cybersecurity.</p>
+
+    <div class="cards">
+      <a href="https://github.com/nauliasitumeang/ctf-writeups" target="_blank" rel="noopener" class="fade card wide">
+        <h3>CTF Writeups</h3>
+        <p>My final project from the GDGoC USU Cybersecurity Pathway: 4 challenges across web exploitation, cryptography, reverse engineering, and forensics.</p>
+        <div class="tags">
+          <span class="tag">📄 Full PDF writeup</span>
+          <span class="tag">&lt;/&gt; Python solver scripts</span>
+          <span class="tag">📋 Summary table</span>
+        </div>
+        <span class="card-link">Open repository →</span>
+      </a>
+    </div>
+
+    <div class="fade center-btn">
+      <a href="work.html" class="btn">See more</a>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section">
+    <h2 class="fade section-title">Certificates &amp; Achievements</h2>
+    <p class="fade section-sub">Swipe, drag, or use the arrows.</p>
+
+    <div class="fade carousel">
+      <button class="arrow" id="prevCert" aria-label="Previous">‹</button>
+      <div class="cert-track" id="certTrack">
+
+        <!-- Ganti <div class="cert-img">...</div> dengan <img class="cert-img" src="img/namafile.jpg" alt="..."> -->
+        <article class="cert-card">
+          <img class="cert-img" src="../img/gdg_cs.jpg" alt="Sertifikat Cybersec Pathway GDGoC USU">
+          <h4>1st Best Project, Cybersecurity Pathway</h4>
+          <p>GDGoC USU · Aug 2026</p>
+        </article>
+
+        <article class="cert-card">
+          <img class="cert-img" src="../img/kaggle.png" alt="Sertifikat Kaggle Python">
+          <h4>Python</h4>
+          <p>Kaggle · Jun 2026</p>
+        </article>
+
+        <article class="cert-card">
+          <img class="cert-img" src="../img/cisco1.jpg" alt="Sertifikat Introduction to Cybersec Cisco">
+          <h4>Introduction to Cybersecurity</h4>
+          <p>Cisco Networking Academy · Jun 2026</p>
+        </article>
+
+        <article class="cert-card">
+          <img class="cert-img" src="../img/gdg_ui.jpg" alt="Sertifikat UI/UX Pathway GDGoC USU">
+          <h4>UI/UX Pathway</h4>
+          <p>GDGoC USU · Jan 2026</p>
+        </article>
+
+        <article class="cert-card">
+          <img class="cert-img" src="../img/codefest.jpg" alt="Sertifikat CodeFest 001">
+          <h4>Participant, UI/UX Design Competition</h4>
+          <p>CodeFest 001 · May 2025</p>
+        </article>
+
+        <article class="cert-card">
+          <img class="cert-img" src="../img/webdev.png" alt="Sertifikat Web Developer HIMATIF">
+          <h4>Web Developer</h4>
+          <p>HIMATIF · Jan 2025</p>
+        </article>
+
+      </div>
+      <button class="arrow" id="nextCert" aria-label="Next">›</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Naulia Situmeang. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
